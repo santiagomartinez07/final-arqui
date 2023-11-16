@@ -36,7 +36,8 @@ Inicio_Ciclo
 TAM
 	MOV DPTR, ACC ; Mover la dirección del tamaño a DPTR
 	MOV ACC, [DPTR] ; Mover el valor en la dirección de tamaño al acumulador
-	Invertir_Acumulador: INV ACC ; Invertir el acumulador
+Invertir_Acumulador: 
+	INV ACC ; Invertir el acumulador
 	MOV A, ACC ; Mover el acumulador a A
 	Cargar_Direccion_Iterador: MOV ACC, CTE ; Cargar la dirección del iterador en el acumulador
 0x01 ; Constante 1
@@ -55,20 +56,22 @@ Q_LSB
 	MOV DPTR, ACC ; Mover la dirección del LSB a DPTR
 	MOV ACC, [DPTR] ; Mover el valor en la dirección de LSB al acumulador
 	MOV A, ACC ; Mover el acumulador a A
-	Invertir_Acumulador_2: INV ACC ; Invertir el acumulador
+Invertir_Acumulador_2: 
+	INV ACC ; Invertir el acumulador
 	MOV A, ACC ; Mover el acumulador a A
 	MOV ACC, CTE ; Cargar la dirección de G al acumulador
 G
 	MOV DPTR, ACC ; Mover la dirección de G a DPTR
 	MOV ACC, A ; Mover A al acumulador
-	[DPTR], ACC ; Mover el acumulador a lo que contiene G
+	MOV [DPTR], ACC ; Mover el acumulador a lo que contiene G
 	MOV ACC, CTE ; Cargar la dirección de Q-1 en el acumulador
 Q_1
 	MOV DPTR, ACC ; Mover la dirección de Q-1 a DPTR
 	MOV ACC, [DPTR] ; Mover el valor en la dirección de Q-1 al acumulador
 	INV ACC ; Invertir el acumulador
 	MOV A, ACC ; Mover el acumulador a A
-	Cargar_Direccion_Iterador_3: MOV ACC, CTE ; Cargar la dirección del iterador en el acumulador
+Cargar_Direccion_Iterador_3: 
+	MOV ACC, CTE ; Cargar la dirección del iterador en el acumulador
 	0x01 ; Constante 1
 	ADD ACC, A ; Sumar el acumulador con A (complemento a2)
 	MOV A, ACC ; Mover el acumulador a A
@@ -124,7 +127,7 @@ Q_LSB
 Estado
 	MOV DPTR, ACC ; Mover el acumulador a DPTR
 	MOV ACC, A ; Mover A al acumulador
-	[DPTR], ACC ; Mover el acumulador a lo que contiene Estado
+	MOV [DPTR], ACC ; Mover el acumulador a lo que contiene Estado
 
 // Salto a la siguiente iteración
 	JMP Saltar_Siguiente_Iteracion
