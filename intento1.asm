@@ -31,7 +31,7 @@ count: 0x8
 ; La diferencia radica en la asignación del valor, es decir, si no se detecta valor, 
 ; se establece esa pocisión de código como indice
 
-Inicio_Ciclo
+; Inicio_Ciclo
 	Cargar_Tamano: MOV ACC, CTE ; Cargar el tamaño al acumulador
 TAM
 	MOV DPTR, ACC ; Mover la dirección del tamaño a DPTR
