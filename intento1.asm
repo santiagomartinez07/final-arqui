@@ -31,9 +31,9 @@ count: 0x8
 ; La diferencia radica en la asignación del valor, es decir, si no se detecta valor, 
 ; se establece esa pocisión de código como indice
 
-; Inicio_Ciclo
+Inicio_Ciclo:
 	Cargar_Tamano: MOV ACC, CTE ; Cargar el tamaño al acumulador
-TAM
+TAM:
 	MOV DPTR, ACC ; Mover la dirección del tamaño a DPTR
 	MOV ACC, [DPTR] ; Mover el valor en la dirección de tamaño al acumulador
 Invertir_Acumulador: 
@@ -50,9 +50,9 @@ Iterador
 	MOV ACC, [DPTR] ; Mover el valor en la dirección de Iterador al acumulador
 	ADD ACC, A ; ACC = -tamaño + Iterador
 	JN Saltar_Si_Menor_Cero ; Salta si el resultado es menor a 0
-Ciclo_Booth
+Ciclo_Booth:
 	MOV ACC, CTE ; Cargar la dirección del LSB al acumulador
-Q_LSB
+Q_LSB:
 	MOV DPTR, ACC ; Mover la dirección del LSB a DPTR
 	MOV ACC, [DPTR] ; Mover el valor en la dirección de LSB al acumulador
 	MOV A, ACC ; Mover el acumulador a A
@@ -60,63 +60,63 @@ Invertir_Acumulador_2:
 	INV ACC ; Invertir el acumulador
 	MOV A, ACC ; Mover el acumulador a A
 	MOV ACC, CTE ; Cargar la dirección de G al acumulador
-G
+G:
 	MOV DPTR, ACC ; Mover la dirección de G a DPTR
 	MOV ACC, A ; Mover A al acumulador
 	MOV [DPTR], ACC ; Mover el acumulador a lo que contiene G
 	MOV ACC, CTE ; Cargar la dirección de Q-1 en el acumulador
-Q_1
+Q_1:
 	MOV DPTR, ACC ; Mover la dirección de Q-1 a DPTR
 	MOV ACC, [DPTR] ; Mover el valor en la dirección de Q-1 al acumulador
 	INV ACC ; Invertir el acumulador
 	MOV A, ACC ; Mover el acumulador a A
 Cargar_Direccion_Iterador_3: 
 	MOV ACC, CTE ; Cargar la dirección del iterador en el acumulador
-0x01 ; Constante 1
+0x01: ; Constante 1
 	ADD ACC, A ; Sumar el acumulador con A (complemento a2)
 	MOV A, ACC ; Mover el acumulador a A
 	MOV ACC, CTE ; Cargar la dirección de G al acumulador
-G
+G:
 	MOV DPTR, ACC ; Mover el acumulador a DPTR
 	MOV ACC, [DPTR] ; Mover lo que hay en G al acumulador
 	ADD ACC, A ; Sumar el acumulador con A (para saber si son iguales o no)
 	JZ Saltar_Si_Iguales ; Salta si el resultado es igual a 0
-Desplazamiento
+Desplazamiento:
 	MOV ACC, CTE ; Cargar la dirección del LSB al acumulador
-Q_LSB
+Q_LSB:
 	MOV DPTR, ACC ; Mover el acumulador a DPTR
 	MOV ACC, [DPTR] ; Mover el valor en LSB al acumulador
 	INV ACC ; Invertir el acumulador
 	MOV A, ACC ; Mover el acumulador a A
 	JZ Saltar_Si_Cero ; Salta si es cero (significa que se suma M al registro A)
-Suma
+Suma:
 	JMP Saltar_Si_No_Cero ; Salta si no es cero (se realiza la resta)
-Resta
+Resta:
 	MOV ACC, CTE ; Cargar la dirección del LSB al acumulador
-Q_LSB
+Q_LSB:
 	MOV DPTR, ACC ; Mover el acumulador a DPTR
 	MOV ACC, [DPTR] ; Mover lo que contiene LSB al acumulador
 	MOV A, ACC ; Mover el acumulador a A
 
 ; Validación del número
 	MOV ACC, CTE ; Cargar la dirección del MSB al acumulador
-Q_MSB
+Q_MSB:
 	MOV DPTR, ACC ; Mover el acumulador a DPTR
 	MOV ACC, [DPTR]
 	JZ Saltar_Si_MSB_Es_Cero ; Salta si el MSB es 0 (el número es válido)
-Invalido
+Invalido:
 	JMP Fin_Ciclo
 	MOV ACC, CTE ; Cargar la dirección del MSB al acumulador
-Q_MSB
+Q_MSB:
 	MOV DPTR, ACC ; Mover el acumulador a DPTR
 	MOV ACC, [DPTR]
 	JZ Saltar_Si_MSB_Es_Cero ; Salta si el MSB es 0 (el número es válido)
-Invalido
+Invalido:
 	JMP Saltar_SI_No_Es_Valido ; Salta si el número no es válido, al final
 
 ; Mantenimiento del estado
 	MOV ACC, CTE ; Cargar la dirección del LSB al acumulador
-Q_LSB
+Q_LSB:
 	MOV DPTR, ACC ; Mover el acumulador a DPTR
 	MOV ACC, [DPTR] ; Mover lo que hay en LSB al acumulador
 	MOV A, ACC ; Mover el acumulador a A
@@ -124,7 +124,7 @@ Q_LSB
 
 ; Registro del estado
 	MOV ACC, CTE ; Cargar la dirección del registro del estado al acumulador
-Estado
+Estado:
 	MOV DPTR, ACC ; Mover el acumulador a DPTR
 	MOV ACC, A ; Mover A al acumulador
 	MOV [DPTR], ACC ; Mover el acumulador a lo que contiene Estado
