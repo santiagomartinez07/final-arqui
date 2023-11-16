@@ -42,7 +42,8 @@ TAM
 0x01 ; Constante 1
 	ADD ACC, A ; Sumar acumulador con A (complemento a2)
 	MOV A, ACC ; Mover el acumulador a A
-	Cargar_Direccion_Iterador_2: MOV ACC, CTE ; Cargar la dirección del iterador en el acumulador
+Cargar_Direccion_Iterador_2 
+	MOV ACC, CTE ; Cargar la dirección del iterador en el acumulador
 Iterador
 	MOV DPTR, ACC ; Mover la dirección del Iterador a DPTR
 	MOV ACC, [DPTR] ; Mover el valor en la dirección de Iterador al acumulador
