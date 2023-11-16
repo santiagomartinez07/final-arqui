@@ -72,7 +72,7 @@ Q_1
 	MOV A, ACC ; Mover el acumulador a A
 Cargar_Direccion_Iterador_3: 
 	MOV ACC, CTE ; Cargar la dirección del iterador en el acumulador
-	0x01 ; Constante 1
+0x01 ; Constante 1
 	ADD ACC, A ; Sumar el acumulador con A (complemento a2)
 	MOV A, ACC ; Mover el acumulador a A
 	MOV ACC, CTE ; Cargar la dirección de G al acumulador
