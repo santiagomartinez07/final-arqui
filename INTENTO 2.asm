@@ -53,7 +53,7 @@ Inicio_Ciclo:
             mov ACC, [DPTR]
             ADD ACC, A
 
-        JNC Saltar_Si_Menor_Cero
+        jc Saltar_Si_Menor_Cero
 
 Ciclo_Booth:
 
@@ -73,7 +73,7 @@ Ciclo_Booth:
         mov DPTR, ACC
         mov ACC, [DPTR]
         ADD ACC, A
-        JN Saltar_Si_Menor_Cero
+        jn Saltar_Si_Menor_Cero
 
 Desplazamiento:
 
@@ -82,7 +82,7 @@ Desplazamiento:
         mov ACC, [DPTR]
         INV ACC
         mov A, ACC
-        JZ Saltar_Si_Cero
+        jz Saltar_Si_Cero
 
 Suma:
         JMP Saltar_Si_No_Cero
@@ -98,7 +98,7 @@ Resta:
         mov ACC, CTE
         mov DPTR, ACC
         mov ACC, [DPTR]
-        JZ Saltar_Si_MSB_Es_Cero
+        jz Saltar_Si_MSB_Es_Cero
 
 Invalido:
         JMP Fin_Ciclo
@@ -106,7 +106,7 @@ Invalido:
         mov ACC, CTE
         mov DPTR, ACC
         mov ACC, [DPTR]
-        JZ Saltar_Si_MSB_Es_Cero
+        jz Saltar_Si_MSB_Es_Cero
 
 Invalido:
         JMP Saltar_SI_No_Es_Valido
