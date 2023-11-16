@@ -98,7 +98,7 @@ Q_LSB
 	MOV ACC, [DPTR] ; Mover lo que contiene LSB al acumulador
 	MOV A, ACC ; Mover el acumulador a A
 
-// Validación del número
+; Validación del número
 	MOV ACC, CTE ; Cargar la dirección del MSB al acumulador
 Q_MSB
 	MOV DPTR, ACC ; Mover el acumulador a DPTR
@@ -114,7 +114,7 @@ Q_MSB
 Invalido
 	JMP Saltar_SI_No_Es_Valido ; Salta si el número no es válido, al final
 
-// Mantenimiento del estado
+; Mantenimiento del estado
 	MOV ACC, CTE ; Cargar la dirección del LSB al acumulador
 Q_LSB
 	MOV DPTR, ACC ; Mover el acumulador a DPTR
@@ -122,15 +122,15 @@ Q_LSB
 	MOV A, ACC ; Mover el acumulador a A
 	MOV CTE, A
 
-// Registro del estado
+; Registro del estado
 	MOV ACC, CTE ; Cargar la dirección del registro del estado al acumulador
 Estado
 	MOV DPTR, ACC ; Mover el acumulador a DPTR
 	MOV ACC, A ; Mover A al acumulador
 	MOV [DPTR], ACC ; Mover el acumulador a lo que contiene Estado
 
-// Salto a la siguiente iteración
+; Salto a la siguiente iteración
 	JMP Saltar_Siguiente_Iteracion
 
-// Fin del ciclo
+;Fin del ciclo
 	Fin_Ciclo
