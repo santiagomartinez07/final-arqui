@@ -126,6 +126,18 @@ Invalido:
         mov ACC, A
         mov [DPTR], ACC
 
+SALTAR_SI_MENOR_CERO:
+
+        ;Imprime un mensaje
+
+        mov A, #'C'
+        mov DPTR, #0x2000
+        mov [DPTR], A
+
+        ;Salta a la siguiente iteración
+
+        JMP Saltar_Siguiente_Iteracion
+
 ; Salto a la siguiente iteración
 
         JMP Saltar_Siguiente_Iteracion
