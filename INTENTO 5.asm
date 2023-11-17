@@ -8,14 +8,14 @@ M: 0b11111101; Multiplicando
 count: 0x8
 
 ; Funciones
-FUNCTION TAM
+FUNCTION TAM:
   ; Devuelve el tamaño del operando multiplicando
 
   ; Regresa el valor de TAM
   RET CTE
-ENDFUNCTION
 
-FUNCTION SUMA
+
+FUNCTION SUMA:
   ; Suma los valores de Q(LSB) y A(MSB)
 
   ; Carga el valor de Q(LSB) a ACC
@@ -43,9 +43,9 @@ FUNCTION SUMA
 
   ; Regresa al ciclo principal
   RET CTE
-ENDFUNCTION
 
-FUNCTION RESTA
+
+FUNCTION RESTA:
   ; Resta los valores de Q(LSB) y A(MSB)
 
   ; Carga el valor de Q(LSB) a ACC
@@ -73,7 +73,7 @@ FUNCTION RESTA
 
   ; Regresa al ciclo principal
   RET CTE
-ENDFUNCTION
+
 
 ; Inicio del programa
 
