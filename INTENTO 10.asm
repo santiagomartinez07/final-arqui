@@ -30,20 +30,19 @@ MOV ACC, CTE
 A(MSB):
 MOV DPTR, ACC
 MOV ACC, [DPTR]
-MOV A, ACC
+MOV B, ACC ; Guarda A(MSB) en B
 
 ; Realiza la operación de AND entre ACC y A
-AND ACC, A
+AND ACC, B
 
 ; Realiza la suma manualmente sin la instrucción ADD ACC, A
-MOV B, ACC ; Guarda el resultado de AND en B
-MOV ACC, B ; Copia el resultado de AND a ACC
 ADD ACC, #0x01 ; Suma 1 manualmente
-MOV B, ACC ; Guarda el resultado en B
+
+; Guarda el resultado en Q(LSB)
 MOV ACC, CTE
 Q(LSB):
 MOV DPTR, ACC
-MOV [DPTR], B ; Guarda el resultado en Q(LSB)
+MOV [DPTR], ACC
 
 ; Regresa al ciclo principal
 RET
@@ -64,7 +63,7 @@ MOV ACC, CTE
 A(MSB):
 MOV DPTR, ACC
 MOV ACC, [DPTR]
-MOV A, ACC
+MOV B, ACC ; Guarda A(MSB) en B
 
 ; Complementa el valor de A(MSB)
 INV ACC
