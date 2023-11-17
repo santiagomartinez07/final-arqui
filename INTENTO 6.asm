@@ -20,14 +20,14 @@ FUNCTION SUMA:
 
 ; Carga el valor de Q(LSB) a ACC
 MOV ACC, CTE
-Q(LSB)
+Q(LSB):
 MOV DPTR, ACC
 MOV ACC, [DPTR]
 MOV A, ACC
 
 ; Carga el valor de A(MSB) a ACC
 MOV ACC, CTE
-A(MSB)
+A(MSB):
 MOV DPTR, ACC
 MOV ACC, [DPTR]
 MOV A, ACC
@@ -37,7 +37,7 @@ ADD ACC, A
 
 ; Guarda el resultado en Q(LSB)
 MOV ACC, CTE
-Q(LSB)
+Q(LSB):
 MOV DPTR, ACC
 MOV [DPTR], ACC
 
@@ -50,14 +50,14 @@ FUNCTION RESTA:
 
 ; Carga el valor de Q(LSB) a ACC
 MOV ACC, CTE
-Q(LSB)
+Q(LSB):
 MOV DPTR, ACC
 MOV ACC, [DPTR]
 MOV A, ACC
 
 ; Carga el valor de G a ACC
 MOV ACC, CTE
-G
+G:
 MOV DPTR, ACC
 MOV ACC, [DPTR]
 ADD ACC, A
@@ -67,7 +67,7 @@ JZ CTE_LOOP_END
 
 ; Si ACC no es igual a 0, realiza la resta
 MOV ACC, CTE
-A(MSB)
+A(MSB):
 MOV DPTR, ACC
 MOV ACC, [DPTR]
 MOV A, ACC
@@ -77,7 +77,7 @@ MOV A, ACC
 
 ; Almacena el resultado en Q(LSB)
 MOV ACC, CTE
-Q(LSB)
+Q(LSB):
 MOV DPTR, ACC
 MOV [DPTR], ACC
 
@@ -125,14 +125,14 @@ HLT
 CICLO_BOOTH:
 ; Carga el valor de Q(LSB) a ACC
 MOV ACC, CTE
-Q(LSB)
+Q(LSB):
 MOV DPTR, ACC
 MOV ACC, [DPTR]
 MOV A, ACC
 
 ; Carga el valor de G a ACC
 MOV ACC, CTE
-G
+G:
 MOV DPTR, ACC
 MOV ACC, [DPTR]
 ADD ACC, A
