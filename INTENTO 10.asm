@@ -5,6 +5,8 @@ variableA: 0b0
 Q: 0b10000001 ; Multiplicador
 Q_1: 0b0
 M: 0b11111101 ; Multiplicando
+A: 0b00000001
+B: 0b00000001
 count: 0x8
 
 ; Funciones
