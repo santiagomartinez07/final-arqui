@@ -12,7 +12,7 @@ FUNCTION TAM:
   ; Devuelve el tamaño del operando multiplicando
 
   ; Regresa el valor de TAM
-  RET CTE
+  RET
 
 
 FUNCTION SUMA:
@@ -42,7 +42,7 @@ FUNCTION SUMA:
   MOV [DPTR], ACC
 
   ; Regresa al ciclo principal
-  RET CTE
+  RET
 
 
 FUNCTION RESTA:
@@ -72,7 +72,7 @@ FUNCTION RESTA:
   MOV [DPTR], ACC
 
   ; Regresa al ciclo principal
-  RET CTE
+  RET
 
 
 ; Inicio del programa
