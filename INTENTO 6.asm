@@ -95,7 +95,7 @@ CTE_LOOP_END:
 Init_Loop:
 ; Inicializa el contador y el valor de la variable Q(LSB)
 MOV ACC, CTE
-TAM
+CALL TAM
 MOV DPTR, ACC
 MOV ACC, [DPTR]
 INV ACC
@@ -107,7 +107,7 @@ ADD ACC, A
 MOV A, ACC
 
 MOV ACC, CTE
-ITERATOR
+ITERATOR:
 MOV DPTR, ACC
 MOV ACC, [DPTR]
 ADD ACC, A
