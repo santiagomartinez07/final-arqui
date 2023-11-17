@@ -144,3 +144,11 @@ JMP CTE_LOOP
 
 ; Fin del bucle principal
 CTE_LOOP_END:
+
+; Imprime el resultado
+MOV ACC, Q
+MOV DPTR, CTE
+MOV [DPTR], ACC
+
+; Termina el programa
+HLT
