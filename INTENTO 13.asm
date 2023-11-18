@@ -61,7 +61,7 @@ mov DPTR, ACC
 mov ACC, [DPTR]
 and ACC, A
 
-jnz loop
+jz loop
 
 end:
 
