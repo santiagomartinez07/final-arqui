@@ -1,3 +1,12 @@
+variableA: 0b0 
+Q: 0b10000001 ; Multiplicador
+Q_1: 0b0
+M: 0b11111101; Multiplicando
+count: 0x8
+bitUno: 0b1
+variableS: 0b0
+
+
 inicio:
 
 mov ACC, 0b1
@@ -55,3 +64,8 @@ and ACC, A
 jnz loop
 
 end:
+
+mov ACC, variableA
+mov DPTR, ACC
+mov ACC, [DPTR]
+hlt
