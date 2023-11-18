@@ -47,7 +47,6 @@ mov ACC, [DPTR]
 mov A, ACC
 MOV A, ACC
 MOV ACC, variableS
-RSH ACC, 1
 MOV ACC, A
 mov A, ACC
 mov ACC, variableA
