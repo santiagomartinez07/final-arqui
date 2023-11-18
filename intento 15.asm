@@ -41,7 +41,7 @@ loop:
 mov ACC, M
 mov DPTR, ACC
 mov ACC, [DPTR]
-jz end
+jz fin
 
 ; Manejar el bit de signo por separado
 mov ACC, variableA
