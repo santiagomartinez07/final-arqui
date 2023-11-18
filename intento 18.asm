@@ -45,7 +45,9 @@ mov ACC, variableA
 mov DPTR, ACC
 mov ACC, [DPTR]
 mov A, ACC
-and ACC, variableS ; Agregar el bit de signo a variableA
+MOV A, ACC
+AND A, variableS
+MOV ACC, A
 mov A, ACC
 mov ACC, variableA
 mov DPTR, ACC
